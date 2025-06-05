@@ -1,23 +1,18 @@
 import { CopyCommand } from "@/components/CopyCommand";
 import {
+  Code,
   LucideBook,
-  LucideClipboardCopy,
   LucideGlobe,
   LucideMessageCircle,
 } from "lucide-react";
 import Image from "next/image";
+import Ishare2Logo from "./ishare2-logo";
 
 export default function Home() {
   return (
     <div className="grid grid-rows-[auto_1fr_auto] min-h-screen items-center justify-items-center p-8 pb-20 gap-16 sm:p-20 font-sans">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start text-sm sm:text-base">
-        <Image
-          src="/ishare2-logo.png"
-          alt="ishare2 logo"
-          width={250}
-          height={250}
-          priority
-        />
+        <Ishare2Logo />
 
         <ol className="list-decimal list-inside text-center sm:text-left font-mono text-sm leading-6">
           <li className="mb-2 tracking-tight">
@@ -45,30 +40,30 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="row-start-3 flex md:flex-wrap items-center justify-center gap-6 text-sm">
+      <footer className="row-start-3 flex flex-wrap md:flex-nowrap items-center justify-center gap-6 text-sm">
         <a
           className="flex items-center gap-2 hover:underline underline-offset-4"
+          href="https://github.com/ishare2-org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Code size={18} />
+          GitHub Repository
+        </a>
+
+        <a
+          className="flex flex-col justify-center items-center gap-1 hover:underline underline-offset-4"
           href="https://labhub.eu.org"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LucideGlobe size={18} />
-          LabHub Repository
-        </a>
-
-        <a
-          className="flex flex-col items-center gap-1 hover:underline underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span>Powered by</span>
+          <span className="leading-tight">Powered by</span>
           <Image
             src="/labhub-logo.png"
             alt="LabHub logo"
-            width={160}
-            height={50}
-            className="inline-block light:invert"
+            width={100}
+            height={45}
+            className="inline-block invert dark:invert-0 hover:underline"
           />
         </a>
 
