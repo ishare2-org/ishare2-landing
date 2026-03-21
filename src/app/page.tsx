@@ -4,7 +4,6 @@ import {
   BookOpen,
   Terminal,
   ArrowRight,
-  Download,
   Box,
   Zap,
 } from "lucide-react";
@@ -17,7 +16,7 @@ export default function Home() {
       {/* Background glowing effects */}
       <div className="absolute top-0 inset-x-0 h-[600px] bg-gradient-to-b from-primary/5 via-background to-background pointer-events-none" />
       <div className="absolute top-[-20%] left-[-10%] w-[60%] h-[60%] bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] bg-yellow-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* Navbar */}
       <header className="container mx-auto px-6 py-8 flex items-center justify-between relative z-10">
