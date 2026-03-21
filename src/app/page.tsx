@@ -88,24 +88,26 @@ export default function Home() {
               <div className="w-3 h-3 rounded-full bg-[#ffbd2e]" />
               <div className="w-3 h-3 rounded-full bg-[#27c93f]" />
             </div>
-            <div className="ml-auto text-xs font-mono text-white/50 flex items-center gap-2">
-              <Terminal size={14} />
-              <span>bash</span>
+            <div className="ml-auto flex items-center gap-4">
+              <CopyCommand variant="terminal" />
+              <div className="text-xs font-mono text-white/50 flex items-center gap-2">
+                <Terminal size={14} />
+                <span>bash</span>
+              </div>
             </div>
           </div>
-          <div className="p-6 font-mono text-sm sm:text-base text-gray-300 flex items-center gap-4 overflow-x-auto">
+          <div className="p-6 font-mono text-sm sm:text-base text-gray-300 flex items-center gap-4 overflow-x-auto group cursor-copy hover:bg-white/[0.02] transition-colors">
             <span className="text-green-400 select-none font-bold">$</span>
             <code className="text-gray-100 whitespace-nowrap">
               curl -sSL https://ishare2.sh/install | sh
             </code>
           </div>
-        </div>
+          </div>
 
         {/* Call to Actions */}
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full max-w-md mx-auto sm:max-w-none">
           <CopyCommand
             className="h-12 px-8 text-base shadow-lg shadow-primary/20 hover:shadow-primary/30 w-full sm:w-auto"
-            showTerminalIcon
           />
           <a
             className="rounded-full border border-border bg-background hover:bg-muted flex items-center justify-center gap-2 font-medium transition-colors h-12 px-8 text-base w-full sm:w-auto shadow-sm"
