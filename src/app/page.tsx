@@ -74,7 +74,7 @@ export default function Home() {
         </h1>
 
         <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-2xl text-balance leading-relaxed">
-          The ultimate CLI tool designed for downloading, managing, and sharing
+          The ultimate CLI tool designed for downloading, managing, and installing
           network emulator images directly from your terminal. Fast, reliable,
           and entirely open-source.
         </p>
