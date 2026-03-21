@@ -1,0 +1,11 @@
+services:
+  landing-page:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ishare2-landing
+    ports:
+      - "3000:3000"
+    restart: always
+    environment:
+      - NODE_ENV=production
