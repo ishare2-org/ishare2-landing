@@ -1,12 +1,22 @@
 "use client";
 
 import React from "react";
-import { LucideClipboardCopy } from "lucide-react";
+import { LucideClipboardCopy, Terminal } from "lucide-react";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 
-export const CopyCommand = () => {
+interface CopyCommandProps {
+  className?: string;
+  command?: string;
+  showTerminalIcon?: boolean;
+}
+
+export const CopyCommand = ({ 
+  className, 
+  command = "curl -sSL https://ishare2.sh/install | sh",
+  showTerminalIcon = false 
+}: CopyCommandProps) => {
   const copyCommand = () => {
-    const command = "curl -sSL https://ishare2.sh/install | sh";
     navigator.clipboard
       .writeText(command)
       .then(() => {
@@ -20,10 +30,13 @@ export const CopyCommand = () => {
 
   return (
     <button
-      className="rounded-full cursor-copy bg-foreground text-background flex items-center justify-center gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium transition-colors h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto"
+      className={cn(
+        "rounded-full cursor-copy bg-foreground text-background flex items-center justify-center gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium transition-all active:scale-95 h-10 sm:h-12 px-4 sm:px-6 w-full sm:w-auto shadow-sm",
+        className
+      )}
       onClick={copyCommand}
     >
-      <LucideClipboardCopy size={18} />
+      {showTerminalIcon ? <Terminal size={18} /> : <LucideClipboardCopy size={18} />}
       Copy command
     </button>
   );
